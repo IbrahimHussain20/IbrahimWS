@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Header Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            transition: top 0.3s;
+        }
+
+        section {
+            padding: 20px;
+            margin-top: 60px; /* Add margin to the content to prevent it from being hidden behind the sticky header */
+        }
+    </style>
+</head>
+<body>
+
+    <header id="myHeader">
+        <h1>Sticky Header Example</h1>
+    </header>
+
+    <section>
+        <p>This is some content. Scroll down to see the sticky header in action.</p>
+    </section>
+
+    <script>
+        // JavaScript to make the header sticky
+        window.onscroll = function() {
+            var header = document.getElementById("myHeader");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                header.style.top = "0";
+            } else {
+                header.style.top = "-60px"; // Adjust this value based on the header's height
+            }
+        };
+    </script>
+
+</body>
+</html>
